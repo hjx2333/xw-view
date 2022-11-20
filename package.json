@@ -1,11 +1,25 @@
 {
   "name": "xw-view",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIt",
+  "author": "hejiaxin",
+  "main": "lib/xw-view.umd.min.js",
+  "description": "低代码可视化组件库",
+  "files": [
+    "lib",
+    "package.json",
+    "README.md"
+  ],
+  "keywords": [
+    "ant-design-vue",
+    "animate.css",
+    "echarts"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name xw-view --dest lib ./packages/index.js",
+    "lib": "vue-cli-service build --target lib --name xw-view --dest lib packages/index.js",
     "publish": "npm publish --registry=http://172.16.9.42:4873",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
