@@ -67,5 +67,8 @@ export default {
   },
   event: {
     clickFn: ''
+  },
+  animate: {
+    type: 'shake'
   }
 }

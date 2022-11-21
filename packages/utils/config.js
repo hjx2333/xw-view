@@ -1,5 +1,7 @@
-// 批量获取所有组件配置文件
-export function getComponentConfig() {
+let globalConfig = {}
+
+// 批量获取所有组件默认配置文件
+export function getDefaultComponentConfig() {
   const config = {}
   const requireConfig = require.context('../src', true, /config\.js$/)
   requireConfig.keys().forEach(fileName => {
@@ -13,8 +15,8 @@ export function getComponentConfig() {
   return config
 }
 
-// 获取全局配置文件
-export function getGlobalConfig() {
+// 获取默认的全局配置文件
+export function getDefaultGlobalConfig() {
   let config = {}
   const requireConfig = require.context('../src', false, /globalConfig\.js$/)
   requireConfig.keys().forEach(fileName => {
@@ -22,4 +24,14 @@ export function getGlobalConfig() {
     config = fileConfig.default
   })
   return config
+}
+
+// 获取默认的全局配置文件
+export function saveGlobalConfig(config) {
+  globalConfig = config
+}
+
+// 获取默认的全局配置文件
+export function getGlobalConfig() {
+  return globalConfig
 }

@@ -85,7 +85,8 @@ export default {
       bottom: '0'
     }
   },
-  event: {
-    clickFn: ''
+  animate: {
+    type: '',
+    isLoop: false
   }
 }

@@ -1,5 +1,6 @@
 <template>
   <a-table
+    ref="ele"
     :columns="store.columns"
     :data-source="tableData"
     :pagination="store.pagination"

@@ -1,5 +1,5 @@
 <template>
-  <div ref="echart" class="statistics-item areaLineChart"></div>
+  <div ref="ele" class="statistics-item areaLineChart"></div>
 </template>
 
 <script>
@@ -10,7 +10,6 @@ export default {
   mixins: [globalConfig, mixin],
   data() {
     return {
-      selector: 'AreaLine'
     }
   },
   methods: {

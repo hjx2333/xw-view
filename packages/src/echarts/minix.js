@@ -29,18 +29,22 @@ export default {
     }
   },
   mounted() {
-    const ele = this.$refs.echart
+    const ele = this.$refs.ele
     this.currentEle = ele
     this.init(ele)
   },
   methods: {
     async init(ele) {
-      this.chart = echarts.init(ele)
-      const data = await this.judgeDataSource()
-      this.setOptions(data)
-      this.chart.on('click', params => {
-        this.$emit('echartsClick', params)
-      })
+      try {
+        this.chart = echarts.init(ele)
+        const data = await this.judgeDataSource()
+        this.setOptions(data)
+        this.chart.on('click', params => {
+          this.$emit('echartsClick', params)
+        })
+      } catch (error) {
+        console.log(error)
+      }
     },
 
     async reload() {

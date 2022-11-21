@@ -60,7 +60,8 @@ export default {
       end: '#00ae9d'
     }
   },
-  event: {
-    clickFn: ''
+  animate: {
+    type: '',
+    isLoop: false
   }
 }

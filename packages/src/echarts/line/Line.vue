@@ -1,5 +1,5 @@
 <template>
-  <div ref="echart" class="statistics-item lineChart"></div>
+  <div ref="ele" class="statistics-item lineChart"></div>
 </template>
 
 <script>
@@ -10,7 +10,6 @@ export default {
   mixins: [globalConfig, mixin],
   data() {
     return {
-      selector: 'line'
     }
   },
   methods: {

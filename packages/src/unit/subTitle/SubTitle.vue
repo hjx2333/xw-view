@@ -1,5 +1,5 @@
 <template>
-  <div class="xw-title-wrap">
+  <div ref="ele" class="xw-title-wrap">
     <img src="@/assets/images/subTitleIcon.png">
     <div class="xw-title">{{ componentData.store.title }}</div>
     <img src="@/assets/images/subTitleIcon.png" class="right-icon">

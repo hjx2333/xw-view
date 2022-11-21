@@ -1,5 +1,5 @@
 <template>
-  <div class="map-wrap">
+  <div ref="ele" class="map-wrap">
     <svg
       id="Map"
       ref="svg"

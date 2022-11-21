@@ -12,7 +12,8 @@ export default {
   store: {
     title: '广州XXXXXX数据监控平台'
   },
-  event: {
-    clickFn: ''
+  animate: {
+    type: '',
+    isLoop: false
   }
 }

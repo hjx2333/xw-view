@@ -1,5 +1,6 @@
 
-import { getComponentConfig, getGlobalConfig } from './utils/config'
+import 'animate.css'
+import { getDefaultComponentConfig, getDefaultGlobalConfig } from './utils/config'
 
 let isInstalled = false
 const requireComponent = require.context('./src', true, /\.vue$/)
@@ -19,7 +20,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  getComponentConfig,
-  getGlobalConfig,
+  getDefaultComponentConfig,
+  getDefaultGlobalConfig,
   install // 对外暴露install方法
 }
