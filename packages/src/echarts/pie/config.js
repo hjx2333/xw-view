@@ -1,6 +1,7 @@
 export default {
   title: '饼图',
   component: 'XwPie',
+  type: 'pie',
   src: require('@/assets/images/pie.png'),
   store: {
     fields: [{
@@ -42,13 +43,6 @@ export default {
       }
     }]
   },
-  style: {
-    width: '600px',
-    height: '600px',
-    top: '0px',
-    left: '0px',
-    zIndex: 1
-  },
   options: {
     seriesOptions: {
       name: '访问次数',
@@ -57,9 +51,5 @@ export default {
       right: '0',
       bottom: '0'
     }
-  },
-  animate: {
-    type: '',
-    isLoop: false
   }
 }

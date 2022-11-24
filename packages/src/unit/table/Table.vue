@@ -1,12 +1,13 @@
 <template>
-  <a-table
-    ref="ele"
-    :columns="store.columns"
-    :data-source="tableData"
-    :pagination="store.pagination"
-    :rowKey="store.rowKey"
-    :scroll="{ y: scrollY }"
-  />
+  <div ref="ele">
+    <a-table
+      :columns="store.columns"
+      :data-source="tableData"
+      :pagination="store.pagination"
+      :rowKey="store.rowKey"
+      :scroll="{ y: scrollY }"
+    />
+  </div>
 </template>
 
 <script>

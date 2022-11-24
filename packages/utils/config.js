@@ -1,3 +1,5 @@
+import { deepCopy } from './utils'
+import { commonConfig, commonOptions } from '@/src/echarts/defaultConfig'
 let globalConfig = {}
 
 // 批量获取所有组件默认配置文件
@@ -7,9 +9,17 @@ export function getDefaultComponentConfig() {
   requireConfig.keys().forEach(fileName => {
     const fileConfig = requireConfig(fileName)
     const name = fileName.match(/\.\/\w+/)[0].replace(/\.\//, '')
+    let currentConfig = deepCopy(fileConfig.default)
+
+    // 合并配置
+    if (name === 'echarts') {
+      currentConfig.options = { ...currentConfig.options, ...commonOptions }
+      currentConfig = { ...commonConfig, ...currentConfig }
+    }
+
     config[name]
-      ? config[name].push(fileConfig.default)
-      : (config[name] = [fileConfig.default])
+      ? config[name].push(currentConfig)
+      : (config[name] = [currentConfig])
   })
 
   return config

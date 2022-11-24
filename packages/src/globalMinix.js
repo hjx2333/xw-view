@@ -20,7 +20,16 @@ export default {
     saveGlobalConfig(this.globalConfig)
   },
   mounted() {
-    this.initAnimate()
+  },
+  watch: {
+    'componentData.animate': {
+      async handler() {
+        await this.$nextTick()
+        this.initAnimate()
+      },
+      deep: true,
+      immediate: true
+    }
   },
   methods: {
     /** 数据过滤 */
@@ -84,17 +93,24 @@ export default {
     },
 
     initAnimate() {
-      let className = this.$refs.ele.className
+      const ele = this.$refs.ele
+      let className = ele.className
       const animateType = this.componentData.animate.type
+      const prevAnimateType = ele.getAttribute('data-animate')
+      if (prevAnimateType) {
+        className = className.replace(prevAnimateType, '')
+      }
+
       if (this.componentData.animate.type) {
         className += ` animate__animated ${animateType}`
+        ele.setAttribute('data-animate', ` animate__animated ${animateType}`)
       }
 
       if (this.componentData.animate.isLoope) {
         className += ` animate__infinite`
       }
 
-      this.$refs.ele.className = className
+      ele.className = className
     }
   }
 }

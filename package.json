@@ -1,6 +1,6 @@
 {
   "name": "xw-view",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "license": "MIt",
   "author": "hejiaxin",
@@ -20,7 +20,6 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name xw-view --dest lib packages/index.js",
-    "publish": "npm publish --registry=http://172.16.9.42:4873",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },

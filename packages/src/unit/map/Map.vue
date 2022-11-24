@@ -584,8 +584,10 @@
 </template>
 
 <script>
+import globalMinix from '../../globalMinix'
 export default {
   name: 'Map',
+  mixins: [globalMinix],
   data() {
     return {
       map: null,

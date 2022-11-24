@@ -46,28 +46,18 @@ export default {
       }
     ]
   },
-  style: {
-    width: '600px',
-    height: '600px',
-    top: '0px',
-    left: '0px',
-    zIndex: 1
-  },
   options: {
     xAxisOptions: {
       axisLabel: {
-        color: '#fff',
         fontSize: 16
       }
     },
     yAxisOptions: {
       name: '次/单位',
       nameTextStyle: {
-        color: '#fff',
         fontSize: 16
       },
       axisLabel: {
-        color: '#fff',
         fontSize: 16
       }
     },
@@ -84,9 +74,5 @@ export default {
       right: '40px',
       bottom: '0'
     }
-  },
-  animate: {
-    type: '',
-    isLoop: false
   }
 }

@@ -1,6 +1,7 @@
 export default {
-  title: '横向柱状图',
+  title: '条形图',
   component: 'XwHorizontalBar',
+  type: 'bar',
   src: require('@/assets/images/horizontalBar.png'),
   store: {
     fields: [
@@ -38,15 +39,7 @@ export default {
       }
     ]
   },
-  style: {
-    width: '600px',
-    height: '600px',
-    top: '0px',
-    left: '0px',
-    zIndex: 1
-  },
   options: {
-    xAxisOptions: {},
     yAxisOptions: {
       name: '次/单位'
     },
@@ -59,16 +52,6 @@ export default {
       left: '0',
       right: '20px',
       bottom: '0'
-    },
-    rangeColor: {
-      start: '#00ae9d',
-      end: '#00ae9d'
     }
-  },
-  event: {
-    clickFn: ''
-  },
-  animate: {
-    type: 'shake'
   }
 }

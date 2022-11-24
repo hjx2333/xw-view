@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     setOptions(data) {
-      const { xAxisOptions, yAxisOptions, seriesOptions, grid } = this.componentData.options
+      const { xAxisOptions, yAxisOptions, seriesOptions, grid, textColor } = this.componentData.options
       const xAxis = []
       const series = []
       data.forEach(d => {
@@ -38,10 +38,19 @@ export default {
           type: 'category',
           boundaryGap: false,
           data: xAxis,
+          axisLabel: {
+            color: textColor
+          },
           ...xAxisOptions
         },
         yAxis: {
           type: 'value',
+          nameTextStyle: {
+            color: textColor
+          },
+          axisLabel: {
+            color: textColor
+          },
           ...yAxisOptions
         },
         series: [
