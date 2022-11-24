@@ -1,6 +1,7 @@
 export default {
   title: '柱状图',
   component: 'XwBar',
+  type: 'bar',
   src: require('@/assets/images/bar.png'),
   store: {
     fields: [{
@@ -33,34 +34,13 @@ export default {
       count: 8
     }]
   },
-  style: {
-    width: '600px',
-    height: '600px',
-    top: '0px',
-    left: '0px',
-    zIndex: 1
-  },
   options: {
-    xAxisOptions: {},
     yAxisOptions: {
       name: '次/单位'
     },
     seriesOptions: {
       name: '访问次数',
       barWidth: 40
-    },
-    grid: {
-      top: '50px',
-      left: '0',
-      right: '0',
-      bottom: '0'
-    },
-    rangeColor: {
-      start: '#00ae9d',
-      end: '#00ae9d'
     }
-  },
-  event: {
-    clickFn: ''
   }
 }

@@ -12,7 +12,8 @@ export default {
   store: {
     title: '一级标题'
   },
-  event: {
-    clickFn: ''
+  animate: {
+    type: '',
+    isLoop: false
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="map-wrap">
+  <div ref="ele" class="map-wrap">
     <svg
       id="Map"
       ref="svg"
@@ -584,8 +584,10 @@
 </template>
 
 <script>
+import globalMinix from '../../globalMinix'
 export default {
   name: 'Map',
+  mixins: [globalMinix],
   data() {
     return {
       map: null,

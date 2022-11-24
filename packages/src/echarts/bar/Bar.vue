@@ -1,5 +1,5 @@
 <template>
-  <div ref="echart" class="statistics-item barChart"></div>
+  <div ref="ele" class="statistics-item barChart"></div>
 </template>
 
 <script>
@@ -10,12 +10,11 @@ export default {
   mixins: [globalConfig, mixin],
   data() {
     return {
-      selector: 'bar'
     }
   },
   methods: {
     setOptions(data) {
-      const { xAxisOptions, yAxisOptions, seriesOptions, grid, rangeColor } = this.componentData.options
+      const { xAxisOptions, yAxisOptions, seriesOptions, grid, rangeColor, textColor } = this.componentData.options
       const xAxis = []
       const series = []
       data.forEach(d => {
@@ -44,19 +43,19 @@ export default {
               return value.replace(/(?!$)(?<=^(.{6})+)/g, '\n')
             },
             fontSize: 14,
-            color: '#fff'
+            color: textColor
           },
           ...xAxisOptions
         },
         yAxis: {
           nameTextStyle: {
             fontSize: 14,
-            color: '#fff'
+            color: textColor
           },
           nameGap: 22,
           axisLabel: {
             fontSize: 14,
-            color: '#fff'
+            color: textColor
           },
           splitLine: {
             show: true,

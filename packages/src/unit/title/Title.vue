@@ -1,5 +1,5 @@
 <template>
-  <div class="xw-title-wrap">
+  <div ref="ele" class="xw-title-wrap">
     <div class="xw-title">{{ componentData.store.title }}</div>
   </div>
 </template>

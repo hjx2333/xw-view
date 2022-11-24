@@ -1,5 +1,5 @@
 <template>
-  <div ref="echart" class="statistics-item barChart"></div>
+  <div ref="ele" class="statistics-item barChart"></div>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
   mixins: [globalConfig, mixin],
   methods: {
     setOptions(data) {
-      const { xAxisOptions, yAxisOptions, seriesOptions, grid, rangeColor } = this.componentData.options
+      const { xAxisOptions, yAxisOptions, seriesOptions, grid, rangeColor, textColor } = this.componentData.options
       const yAxis = []
       const series = []
       data.forEach(d => {
@@ -33,8 +33,8 @@ export default {
         xAxis: {
           type: 'value',
           axisLabel: {
-            fontSize: 14,
-            color: '#fff'
+            fontSize: 16,
+            color: textColor
           },
           ...xAxisOptions
         },
@@ -43,12 +43,12 @@ export default {
           data: yAxis,
           nameTextStyle: {
             fontSize: 14,
-            color: '#fff'
+            color: textColor
           },
           nameGap: 22,
           axisLabel: {
             fontSize: 14,
-            color: '#fff'
+            color: textColor
           },
           ...yAxisOptions
         },

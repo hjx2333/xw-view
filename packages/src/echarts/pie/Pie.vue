@@ -1,5 +1,5 @@
 <template>
-  <div ref="echart" class="statistics-item pieChart"></div>
+  <div ref="ele" class="statistics-item pieChart"></div>
 </template>
 
 <script>
@@ -10,7 +10,6 @@ export default {
   mixins: [globalConfig, mixin],
   data() {
     return {
-      selector: 'pie'
     }
   },
   methods: {

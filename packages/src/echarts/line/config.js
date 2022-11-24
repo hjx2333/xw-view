@@ -1,6 +1,7 @@
 export default {
   title: '折线图',
   component: 'XwLine',
+  type: 'line',
   src: require('@/assets/images/line.png'),
   store: {
     fields: [{
@@ -39,28 +40,18 @@ export default {
       count: 36
     }]
   },
-  style: {
-    width: '600px',
-    height: '600px',
-    top: '0px',
-    left: '0px',
-    zIndex: 1
-  },
   options: {
     xAxisOptions: {
       axisLabel: {
-        color: '#fff',
         fontSize: 16
       }
     },
     yAxisOptions: {
       name: '次/单位',
       nameTextStyle: {
-        color: '#fff',
         fontSize: 16
       },
       axisLabel: {
-        color: '#fff',
         fontSize: 16
       }
     },
@@ -70,15 +61,6 @@ export default {
       itemStyle: {
         color: '#00ae9d'
       }
-    },
-    grid: {
-      top: '50px',
-      left: '0',
-      right: '40px',
-      bottom: '0'
     }
-  },
-  event: {
-    clickFn: ''
   }
 }

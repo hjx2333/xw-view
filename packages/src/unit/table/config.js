@@ -79,7 +79,8 @@ export default {
       }
     ]
   },
-  event: {
-    clickFn: ''
+  animate: {
+    type: '',
+    isLoop: false
   }
 }

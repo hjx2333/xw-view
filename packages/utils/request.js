@@ -8,7 +8,10 @@ import {
   Modal,
   notification
 } from 'ant-design-vue'
-import globalConfig from '@/config/global'
+import 'ant-design-vue/lib/message/style/css'
+import 'ant-design-vue/lib/modal/style/css'
+import 'ant-design-vue/lib/notification/style/css'
+import { getGlobalConfig } from '@/utils/config'
 
 axios.defaults.withCredentials = false
 // 创建 axios 实例
@@ -20,7 +23,7 @@ const service = axios.create({
 // 发送请求
 service.interceptors.request.use(
   config => {
-    const { prefix, headers } = globalConfig.request
+    const { prefix, headers } = getGlobalConfig().request
     Object.assign(config.headers, headers)
 
     // 统一请求地址前缀

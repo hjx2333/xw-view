@@ -1,85 +1,72 @@
 <template>
   <div id="app">
-    <xw-preview :componentStore="componentData" :globalConfig="globalConfig" />
+    <xw-admin-preview :componentStore="componentData" :globalConfig="globalConfig" />
   </div>
 </template>
 
 <script>
+import { commonConfig, commonOptions } from '../packages/src/echarts/defaultConfig.js'
 export default {
   data() {
     return {
-      componentData: [
-        {
-          title: '横向柱状图',
-          component: 'XwHorizontalBar',
-          src: require('@/assets/images/bar.png'),
-          store: {
-            fields: [
-              {
-                name: 'title',
-                description: '标题',
-                type: 'string'
-              },
-              {
-                name: 'count',
-                description: '数量',
-                type: 'number | string'
-              }
-            ],
-            request: {
-              useRequest: false,
-              url: 'logcenter/accessLogs/accessStatistics',
-              method: 'get',
-              params: { accessTime: '2022-10-11', terminalType: '1' },
-              interval: '',
-              filterCode: 'return data'
-            },
-            staticData: [
-              {
-                title: '支持平台',
-                count: 10
-              },
-              {
-                title: '短信平台',
-                count: 20
-              },
-              {
-                title: '数据中心',
-                count: 8
-              }
-            ]
+      componentData: [{
+        ...commonConfig,
+        title: '分组柱状图',
+        component: 'XwMultipleBar',
+        type: 'bar',
+        src: require('@/assets/images/multipleBar.png'),
+        store: {
+          fields: [{
+            name: 'title',
+            description: '标题',
+            type: 'string'
           },
-          style: {
-            width: '600px',
-            height: '600px',
-            top: '0px',
-            left: '0px',
-            zIndex: 1
+          {
+            name: 'count',
+            description: '数量',
+            type: 'array'
           },
-          options: {
-            xAxisOptions: {},
-            yAxisOptions: {
-              name: '次/单位'
-            },
-            seriesOptions: {
-              name: '访问次数',
-              barWidth: 40
-            },
-            grid: {
-              top: '50px',
-              left: '0',
-              right: '20px',
-              bottom: '0'
-            },
-            rangeColor: {
-              start: '#00ae9d',
-              end: '#00ae9d'
+          {
+            name: 'date',
+            description: '日期',
+            type: 'string | number'
+          }
+          ],
+          request: {
+            useRequest: false,
+            url: 'logcenter/accessLogs/accessStatistics',
+            method: 'get',
+            params: { 'accessTime': '2022-10-11', 'terminalType': '1' },
+            interval: '',
+            filterCode: 'return data'
+          },
+          staticData: [{
+            title: '支持平台',
+            count: [10, 20, 60, 15],
+            date: '2020'
+          }, {
+            title: '短信平台',
+            count: [20, 90, 30, 40],
+            date: '2021'
+          }, {
+            title: '数据中心',
+            count: [99, 59, 39, 65],
+            date: '2022'
+          }]
+        },
+        options: {
+          ...commonOptions,
+          yAxisOptions: {
+            name: '次/单位'
+          },
+          seriesOptions: {
+            barWidth: 40,
+            label: {
+              show: true
             }
-          },
-          event: {
-            clickFn: ''
           }
         }
+      }
       ],
       globalConfig: {
         request: {
@@ -87,7 +74,7 @@ export default {
           headers: {
             Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWFsTmFtZSI6Iuezu-e7n-euoeeQhuWRmCIsImZvcmNlVXBkYXRlUHciOiIwIiwicm9sZUlkcyI6IiIsInVzZXJfbmFtZSI6InN5c2FkbWluIiwic2NvcGUiOltdLCJkZXBJZCI6IjI5MjUiLCJuZXRXb3JrIjpudWxsLCJ1c2VySWQiOiJlOWNhMjNkNjhkODg0ZDRlYmIxOWQwNzg4OTcyN2RhZSIsImRlcE5hbWUiOiLluILkurrmsJHku6PooajlpKfkvJoiLCJqdGkiOiI4NDE2ZTY1NC1hZDZkLTQ1MzgtOWUzNy05MDc5Yzc3NzliNjAiLCJjbGllbnRfaWQiOiJwYWFzIn0.r5sEtR-Pnee1pVvlEVCBHOHJ62DTuQFcM1f1k698a28'
           },
-          interval: 30000
+          interval: 0
         },
         editor: {
           width: 1920,
