@@ -14,21 +14,18 @@ export default {
   },
   methods: {
     setOptions(data) {
-      const { seriesOptions } = this.componentData.options
+      const { legendOptions, seriesOptions } = this.componentData.options
       this.chart.setOption({
         tooltip: {
           trigger: 'item'
+        },
+        legend: {
+          ...legendOptions
         },
         series: [
           {
             type: 'pie',
             data,
-            label: {
-              show: true,
-              position: 'outside',
-              color: '#fff',
-              fontSize: 18
-            },
             ...seriesOptions
           }
         ]

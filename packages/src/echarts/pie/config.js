@@ -49,7 +49,16 @@ export default {
       top: '0',
       left: '0',
       right: '0',
-      bottom: '0'
+      bottom: '0',
+      label: {
+        show: true,
+        position: 'outside',
+        color: '#fff',
+        fontSize: 18
+      },
+      labelLine: {
+        show: true
+      }
     }
   }
 }
