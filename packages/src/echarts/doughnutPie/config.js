@@ -1,8 +1,8 @@
 export default {
-  title: '饼图',
-  component: 'XwPie',
+  title: '环形图',
+  component: 'XwDoughnutPie',
   type: 'pie',
-  src: require('@/assets/images/pie.png'),
+  src: require('@/assets/images/doughnutPie.png'),
   store: {
     fields: [{
       name: 'name',
@@ -33,7 +33,7 @@ export default {
       name: '短信平台',
       value: 20,
       itemStyle: {
-        color: '#00eaff'
+        color: '#51d6a9'
       }
     }, {
       name: '数据中心',
@@ -44,6 +44,28 @@ export default {
     }]
   },
   options: {
+    titleOptions: {
+      text: '标题',
+      textStyle: {
+        color: '#fff',
+        fontSize: 30
+      },
+      subtext: '副标题',
+      subtextStyle: {
+        color: '#fff',
+        fontSize: 16
+      },
+      left: 'center',
+      top: '45%'
+    },
+    legendOptions: {
+      right: '10%',
+      orient: 'vertical',
+      align: 'left',
+      textStyle: {
+        color: '#fff'
+      }
+    },
     seriesOptions: {
       name: '访问次数',
       top: '0',
@@ -51,8 +73,8 @@ export default {
       right: '0',
       bottom: '0',
       label: {
-        show: true,
-        position: 'outside',
+        show: false,
+        position: 'center',
         color: '#fff',
         fontSize: 18
       },
