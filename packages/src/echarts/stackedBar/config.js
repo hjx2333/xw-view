@@ -47,7 +47,9 @@ export default {
       name: '次/单位'
     },
     seriesOptions: {
-      barWidth: 40,
+      barWidth: 40
+    },
+    labelOptions: {
       label: {
         show: false
       }

@@ -18,8 +18,7 @@ export default {
       name: 'date',
       description: '日期',
       type: 'string | number'
-    }
-    ],
+    }],
     request: {
       useRequest: false,
       url: 'logcenter/accessLogs/accessStatistics',
@@ -47,10 +46,7 @@ export default {
       name: '次/单位'
     },
     seriesOptions: {
-      barWidth: 40,
-      label: {
-        show: false
-      }
+      barWidth: 40
     }
   }
 }

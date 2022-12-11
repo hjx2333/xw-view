@@ -1,71 +1,34 @@
 <template>
   <div id="app">
     <xw-admin-preview :componentStore="componentData" :globalConfig="globalConfig" />
+
+    <!-- <div class="grid-list">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import { commonConfig, commonOptions } from '../packages/src/echarts/defaultConfig.js'
+import { getDefaultComponentConfig, getGlobalConfig } from '../packages/utils/config'
 export default {
   data() {
     return {
       componentData: [{
-        ...commonConfig,
-        title: '分组柱状图',
-        component: 'XwMultipleBar',
-        type: 'bar',
-        src: require('@/assets/images/multipleBar.png'),
-        store: {
-          fields: [{
-            name: 'title',
-            description: '标题',
-            type: 'string'
-          },
-          {
-            name: 'count',
-            description: '数量',
-            type: 'array'
-          },
-          {
-            name: 'date',
-            description: '日期',
-            type: 'string | number'
-          }
-          ],
-          request: {
-            useRequest: false,
-            url: 'logcenter/accessLogs/accessStatistics',
-            method: 'get',
-            params: { 'accessTime': '2022-10-11', 'terminalType': '1' },
-            interval: '',
-            filterCode: 'return data'
-          },
-          staticData: [{
-            title: '支持平台',
-            count: [10, 20, 60, 15],
-            date: '2020'
-          }, {
-            title: '短信平台',
-            count: [20, 90, 30, 40],
-            date: '2021'
-          }, {
-            title: '数据中心',
-            count: [99, 59, 39, 65],
-            date: '2022'
-          }]
+        title: '单列布局',
+        component: 'XwGridSingleRow',
+        style: {
+          width: '100%',
+          height: '200px',
+          top: '0px',
+          left: '0px',
+          zIndex: 1,
+          leftWidth: 'calc(50% - 5px)'
         },
-        options: {
-          ...commonOptions,
-          yAxisOptions: {
-            name: '次/单位'
-          },
-          seriesOptions: {
-            barWidth: 40,
-            label: {
-              show: true
-            }
-          }
-        }
+        colspan: 4,
+        children: []
       }
       ],
       globalConfig: {
@@ -85,10 +48,34 @@ export default {
         }
       }
     }
+  },
+  created() {
+    getDefaultComponentConfig()
+    getGlobalConfig()
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+#app {
+  padding-top: 30px;
+}
+.grid-list {
+  width: 800px;
+  margin: 30px auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  height: 200px;
+  border-radius: 6px;
+  .grid-item {
+    flex: 1;
+    height: 100%;
+    background: #ccc;
+    margin-right: 8px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
 </style>

@@ -39,6 +39,7 @@ export default {
           boundaryGap: false,
           data: xAxis,
           axisLabel: {
+            fontSize: 16,
             color: textColor
           },
           ...xAxisOptions
@@ -46,9 +47,11 @@ export default {
         yAxis: {
           type: 'value',
           nameTextStyle: {
+            fontSize: 16,
             color: textColor
           },
           axisLabel: {
+            fontSize: 16,
             color: textColor
           },
           ...yAxisOptions

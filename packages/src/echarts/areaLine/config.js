@@ -48,18 +48,9 @@ export default {
   },
   options: {
     xAxisOptions: {
-      axisLabel: {
-        fontSize: 16
-      }
     },
     yAxisOptions: {
-      name: '次/单位',
-      nameTextStyle: {
-        fontSize: 16
-      },
-      axisLabel: {
-        fontSize: 16
-      }
+      name: '次/单位'
     },
     seriesOptions: {
       name: '访问次数',
@@ -70,9 +61,9 @@ export default {
     },
     grid: {
       top: '50px',
-      left: '0',
+      left: '20px',
       right: '40px',
-      bottom: '0'
+      bottom: '20px'
     }
   }
 }

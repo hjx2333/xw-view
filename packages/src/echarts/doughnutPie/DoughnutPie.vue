@@ -14,15 +14,26 @@ export default {
   },
   methods: {
     setOptions(data) {
-      const { titleOptions, legendOptions, seriesOptions } = this.componentData.options
+      const { titleOptions, legendOptions, seriesOptions, textColor, labelOptions } = this.componentData.options
       this.chart.setOption({
         tooltip: {
           trigger: 'item'
         },
         title: {
+          textStyle: {
+            color: textColor,
+            fontSize: 30
+          },
+          subtextStyle: {
+            color: textColor,
+            fontSize: 16
+          },
           ...titleOptions
         },
         legend: {
+          textStyle: {
+            color: textColor
+          },
           ...legendOptions
         },
         series: [
@@ -30,6 +41,10 @@ export default {
             type: 'pie',
             radius: ['40%', '70%'],
             data,
+            label: {
+              color: textColor,
+              ...labelOptions
+            },
             ...seriesOptions
           }
         ]
