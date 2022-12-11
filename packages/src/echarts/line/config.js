@@ -42,18 +42,9 @@ export default {
   },
   options: {
     xAxisOptions: {
-      axisLabel: {
-        fontSize: 16
-      }
     },
     yAxisOptions: {
-      name: '次/单位',
-      nameTextStyle: {
-        fontSize: 16
-      },
-      axisLabel: {
-        fontSize: 16
-      }
+      name: '次/单位'
     },
     seriesOptions: {
       name: '访问次数',

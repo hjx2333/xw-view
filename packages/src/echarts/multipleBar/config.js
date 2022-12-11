@@ -48,6 +48,11 @@ export default {
     },
     seriesOptions: {
       barWidth: 40
+    },
+    labelOptions: {
+      label: {
+        show: false
+      }
     }
   }
 }

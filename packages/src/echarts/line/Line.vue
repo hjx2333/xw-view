@@ -6,7 +6,6 @@
 import mixin from '../minix'
 import globalConfig from '../../globalMinix'
 export default {
-  name: 'Bar',
   mixins: [globalConfig, mixin],
   data() {
     return {
@@ -39,6 +38,7 @@ export default {
           boundaryGap: false,
           data: xAxis,
           axisLabel: {
+            fontSize: 16,
             color: textColor
           },
           ...xAxisOptions
@@ -46,9 +46,11 @@ export default {
         yAxis: {
           type: 'value',
           nameTextStyle: {
+            fontSize: 16,
             color: textColor
           },
           axisLabel: {
+            fontSize: 16,
             color: textColor
           },
           ...yAxisOptions

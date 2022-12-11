@@ -49,9 +49,9 @@ export default {
     },
     grid: {
       top: '50px',
-      left: '0',
+      left: '20px',
       right: '20px',
-      bottom: '0'
+      bottom: '20px'
     }
   }
 }

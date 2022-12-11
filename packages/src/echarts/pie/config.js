@@ -50,15 +50,19 @@ export default {
       left: '0',
       right: '0',
       bottom: '0',
-      label: {
-        show: true,
-        position: 'outside',
-        color: '#fff',
-        fontSize: 18
-      },
       labelLine: {
         show: true
       }
+    },
+    labelOptions: {
+      show: true,
+      position: 'outside',
+      fontSize: 18
+    },
+    legendOptions: {
+      right: '10%',
+      orient: 'vertical',
+      align: 'left'
     }
   }
 }

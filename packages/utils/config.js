@@ -5,7 +5,7 @@ let globalConfig = {}
 // 批量获取所有组件默认配置文件
 export function getDefaultComponentConfig() {
   const config = {}
-  const requireConfig = require.context('../src', true, /config\.js$/)
+  const requireConfig = require.context('../src', true, /config.*\.js$/)
   requireConfig.keys().forEach(fileName => {
     const fileConfig = requireConfig(fileName)
     const name = fileName.match(/\.\/\w+/)[0].replace(/\.\//, '')
@@ -13,7 +13,7 @@ export function getDefaultComponentConfig() {
 
     // 合并配置
     if (name === 'echarts') {
-      currentConfig.options = { ...currentConfig.options, ...commonOptions }
+      currentConfig.options = { ...commonOptions, ...currentConfig.options }
       currentConfig = { ...commonConfig, ...currentConfig }
     }
 

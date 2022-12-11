@@ -42,22 +42,12 @@ export default {
 
 <style lang="scss" scoped>
 .preview-wrap {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-
-  .preview-contain {
-    position: relative;
-    // background: url('~@/assets/images/bg.png')no-repeat center center;
-
-    .component-item {
-      position: absolute;
-    }
+ .component-item {
+    position: absolute;
   }
 }
 </style>

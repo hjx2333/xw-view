@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     setOptions(data) {
-      const { xAxisOptions, yAxisOptions, seriesOptions, grid, textColor } = this.componentData.options
+      const { xAxisOptions, yAxisOptions, seriesOptions, labelOptions, grid, textColor } = this.componentData.options
       const legend = []
       const xAxis = []
       const series = []
@@ -31,7 +31,8 @@ export default {
               focus: 'series'
             },
             label: {
-              color: textColor
+              color: textColor,
+              ...labelOptions
             },
             data: d.count,
             ...seriesOptions

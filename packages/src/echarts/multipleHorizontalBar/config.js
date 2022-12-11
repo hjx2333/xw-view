@@ -53,7 +53,12 @@ export default {
       top: '50px',
       left: '26px',
       right: '20px',
-      bottom: '0'
+      bottom: '20px'
+    },
+    labelOptions: {
+      label: {
+        show: false
+      }
     }
   }
 }

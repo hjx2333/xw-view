@@ -94,19 +94,20 @@ export default {
 
     initAnimate() {
       const ele = this.$refs.ele
+      if (!ele) return
       let className = ele.className
-      const animateType = this.componentData.animate.type
+      const animateType = this.componentData.animate?.type
       const prevAnimateType = ele.getAttribute('data-animate')
       if (prevAnimateType) {
         className = className.replace(prevAnimateType, '')
       }
 
-      if (this.componentData.animate.type) {
+      if (animateType) {
         className += ` animate__animated ${animateType}`
         ele.setAttribute('data-animate', ` animate__animated ${animateType}`)
       }
 
-      if (this.componentData.animate.isLoope) {
+      if (this.componentData.animate?.isLoope) {
         className += ` animate__infinite`
       }
 

@@ -46,25 +46,14 @@ export default {
   options: {
     titleOptions: {
       text: '标题',
-      textStyle: {
-        color: '#fff',
-        fontSize: 30
-      },
       subtext: '副标题',
-      subtextStyle: {
-        color: '#fff',
-        fontSize: 16
-      },
       left: 'center',
       top: '45%'
     },
     legendOptions: {
       right: '10%',
       orient: 'vertical',
-      align: 'left',
-      textStyle: {
-        color: '#fff'
-      }
+      align: 'left'
     },
     seriesOptions: {
       name: '访问次数',
@@ -72,15 +61,14 @@ export default {
       left: '0',
       right: '0',
       bottom: '0',
-      label: {
-        show: false,
-        position: 'center',
-        color: '#fff',
-        fontSize: 18
-      },
       labelLine: {
         show: true
       }
+    },
+    labelOptions: {
+      show: false,
+      position: 'center',
+      fontSize: 18
     }
   }
 }

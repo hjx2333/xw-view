@@ -33,10 +33,14 @@ export default {
     this.currentEle = ele
     this.init(ele)
   },
+  destroyed() {
+    window.removeEventListener('resize', this.chart.resize)
+  },
   methods: {
     async init(ele) {
       try {
         this.chart = echarts.init(ele)
+        window.addEventListener('resize', this.chart.resize)
         const data = await this.judgeDataSource()
         this.setOptions(data)
         this.chart.on('click', params => {

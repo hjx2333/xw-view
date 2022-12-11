@@ -22,8 +22,8 @@ export const commonOptions = {
   grid: {
     top: '50px',
     left: '26px',
-    right: '0',
-    bottom: '0'
+    right: '30px',
+    bottom: '20px'
   },
   labelOptions: {
     show: false
