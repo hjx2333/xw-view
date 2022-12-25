@@ -1,4 +1,4 @@
-import { saveGlobalConfig } from '@/utils/config'
+import { getGlobalConfig, saveGlobalConfig } from '@/utils/config'
 import { axios } from '@/utils/request'
 export default {
   props: {
@@ -75,7 +75,7 @@ export default {
     },
 
     intervalRequest(currentInterval) {
-      const { interval } = this.globalConfig.request
+      const { interval } = getGlobalConfig().request
       // 当前请求间隔配置为''，则使用全局配置
       currentInterval = currentInterval === '' && interval
       if (currentInterval) {

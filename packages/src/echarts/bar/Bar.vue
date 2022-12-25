@@ -9,12 +9,20 @@ export default {
   name: 'Bar',
   mixins: [globalConfig, mixin],
   data() {
-    return {
-    }
+    return {}
   },
   methods: {
     setOptions(data) {
-      const { xAxisOptions, yAxisOptions, seriesOptions, grid, rangeColor, textColor } = this.componentData.options
+      const {
+        xAxisOptions,
+        yAxisOptions,
+        seriesOptions,
+        titleOptions,
+        grid,
+        rangeColor,
+        textColor,
+        labelOptions
+      } = this.componentData.options
       const xAxis = []
       const series = []
       data.forEach(d => {
@@ -33,6 +41,17 @@ export default {
         grid: {
           containLabel: true,
           ...grid
+        },
+        title: {
+          textStyle: {
+            fontSize: 24,
+            color: textColor
+          },
+          subtextStyle: {
+            fontSize: 18,
+            color: textColor
+          },
+          ...titleOptions
         },
         xAxis: {
           data: xAxis,
@@ -90,6 +109,12 @@ export default {
             },
             type: 'bar',
             data: series,
+            label: {
+              textStyle: {
+                color: textColor
+              },
+              ...labelOptions
+            },
             ...seriesOptions
           }
         ]

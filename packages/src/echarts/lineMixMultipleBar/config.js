@@ -81,7 +81,7 @@ export default {
         }
       },
       bar: {
-        barWidth: 40
+        barMaxWidth: 40
       }
     },
     labelOptions: {

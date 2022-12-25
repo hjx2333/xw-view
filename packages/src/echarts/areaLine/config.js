@@ -1,6 +1,7 @@
 export default {
   title: '面积折线图',
   component: 'XwAreaLine',
+  type: 'line',
   src: require('@/assets/images/areaLine.png'),
   store: {
     fields: [
