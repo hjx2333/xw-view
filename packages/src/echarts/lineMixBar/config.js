@@ -87,7 +87,7 @@ export default {
       },
       bar: {
         name: '百分比',
-        barWidth: 40
+        barMaxWidth: 40
       }
     }
   }

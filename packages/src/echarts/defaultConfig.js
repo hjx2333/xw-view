@@ -18,6 +18,11 @@ export const commonOptions = {
     start: '#00ae9d',
     end: '#00ae9d'
   },
+  titleOptions: {
+    text: '',
+    subtext: '',
+    left: '30'
+  },
   textColor: '#fff',
   grid: {
     top: '50px',

@@ -40,7 +40,7 @@ export default {
     },
     seriesOptions: {
       name: '访问次数',
-      barWidth: 40
+      barMaxWidth: 40
     }
   }
 }

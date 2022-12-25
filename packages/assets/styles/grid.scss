@@ -1,0 +1,12 @@
+.grid-list {
+  display: flex;
+  border: 1px solid #ccc;
+}
+.grid-mix-wrap {
+  .grid-list {
+    border-bottom: none;
+    &:last-of-type {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
